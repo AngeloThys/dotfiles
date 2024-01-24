@@ -1,37 +1,31 @@
 ---
-- name: Lazyvim setup
-  hosts: localhost
-  become: true
-  connection: local
-  gather_facts: true
-  tasks:
-    - name: Install neovim dependencies
-      ansible.builtin.apt:
-        name:
-          - build-essential
-          - git
-          - ninja-build
-          - gettext
-          - cmake
-          - unzip
-          - curl
-    - name: Clone neovim repo
-      ansible.builtin.git:
-        repo: 'https://github.com/neovim/neovim'
-        dest: '/home/athys/lib/neovim'
-        clone: true
-    - name: Build neovim
-      community.general.make:
-        chdir: '/home/athys/lib/neovim'
-        params:
-          CMAKE_BUILD_TYPE=RelWithDebInfo
-    - name: Install neovim
-      community.general.make:
-        chdir: '/home/athys/lib/neovim'
-        target: install
-    - name: Install lazyvim dependencies
-      ansible.builtin.apt:
-        name:
-          - tar
-          - ripgrep
-          - fd-find
+- name: Install neovim dependencies
+  ansible.builtin.apt:
+    name:
+      - build-essential
+      - git
+      - ninja-build
+      - gettext
+      - cmake
+      - unzip
+      - curl
+- name: Clone neovim repo
+  ansible.builtin.git:
+    repo: 'https://github.com/neovim/neovim'
+    dest: '/home/athys/lib/neovim'
+    clone: true
+- name: Build neovim
+  community.general.make:
+    chdir: '/home/athys/lib/neovim'
+    params:
+      CMAKE_BUILD_TYPE=RelWithDebInfo
+- name: Install neovim
+  community.general.make:
+    chdir: '/home/athys/lib/neovim'
+    target: install
+- name: Install lazyvim dependencies
+  ansible.builtin.apt:
+    name:
+      - tar
+      - ripgrep
+      - fd-find
