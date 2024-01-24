@@ -5,6 +5,9 @@
   connection: local
   gather_facts: true
   tasks:
+    - name: Lsd installation
+      ansible.builtin.include_tasks:
+        file: lsd.yml  
     - name: Lazyvim setup
       ansible.builtin.include_tasks:
         file: lazyvim.yml

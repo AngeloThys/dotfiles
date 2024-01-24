@@ -1,0 +1,8 @@
+---
+- name: Install ansible apt deb dependency
+  ansible.builtin.apt:
+    name: xz-utils
+    state: present
+- name: Install lsd
+  ansible.builtin.apt:
+    deb: https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_amd64.deb
