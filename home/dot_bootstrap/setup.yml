@@ -4,4 +4,7 @@
   become: true
   connection: local
   gather_facts: true
-
+  tasks:
+    - name: Lazyvim setup
+      ansible.builtin.include_tasks:
+        file: lazyvim.yml
