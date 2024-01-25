@@ -1,0 +1,25 @@
+---
+- name: Install tmux dependencies
+  ansible.builtin.apt:
+    name:
+    - libevent
+    - libevent-dev
+    - ncurses
+    - ncurses-dev
+    - libncurses5-dev 
+    - libncursesw5-dev
+    - build-essential
+    - bison
+    - pkg-config
+- name: Download tmux tarball
+  ansible.builtin.get_url:
+    dest: /tmp/
+    mode: '777'
+    url: 'https://github.com/tmux/tmux/releases/download/3.3a/tmux-3.3a.tar.gz'
+- name: Install tmux
+  ansible.builtin.shell: |
+    cd /tmp/
+    tar -zxf tmux-*.tar.gz
+    cd tmux-*/
+    ./configure
+    make && sudo make install

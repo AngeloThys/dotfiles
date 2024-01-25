@@ -11,3 +11,8 @@
     - name: Neovim setup
       ansible.builtin.include_tasks:
         file: neovim.yml
+    - name: Tmux installation
+      ansible.builtin.include_tasks:
+        file: ./tmux.yml
+      tags:
+      - f-tmux
