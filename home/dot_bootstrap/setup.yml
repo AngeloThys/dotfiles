@@ -15,5 +15,5 @@
     - name: Tmux installation
       ansible.builtin.include_tasks:
         file: ./tmux.yml
-      apply:
-        tags: f-tmux
+        apply:
+          tags: f-tmux
