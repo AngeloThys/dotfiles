@@ -39,10 +39,3 @@
       - fd-find
   tags:
   - d-lazyvim
-- name: Clone lazyvim starter
-  ansible.builtin.git:
-    repo: 'https://github.com/LazyVim/starter'
-    dest: '/home/athys/.config/nvim'
-    clone: true
-  tags:
-  - i-lazyvim
