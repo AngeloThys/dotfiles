@@ -4,6 +4,7 @@
   become: true
   connection: local
   gather_facts: true
+  tags: always
   tasks:
     - name: Lsd installation
       ansible.builtin.include_tasks:
@@ -14,5 +15,5 @@
     - name: Tmux installation
       ansible.builtin.include_tasks:
         file: ./tmux.yml
-      tags:
-      - f-tmux
+      apply:
+        tags: f-tmux
