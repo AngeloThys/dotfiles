@@ -8,6 +8,10 @@
     - name: Lsd installation
       ansible.builtin.include_tasks:
         file: lsd.yml  
+      tags:
+      - f-lsd
     - name: Lazyvim setup
       ansible.builtin.include_tasks:
         file: lazyvim.yml
+      tags:
+      - f-lazyvim
