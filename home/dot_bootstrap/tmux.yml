@@ -2,10 +2,7 @@
 - name: Install tmux dependencies
   ansible.builtin.apt:
     name:
-    - libevent
     - libevent-dev
-    - ncurses
-    - ncurses-dev
     - libncurses5-dev 
     - libncursesw5-dev
     - build-essential
