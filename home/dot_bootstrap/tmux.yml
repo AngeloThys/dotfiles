@@ -20,7 +20,7 @@
     cd tmux-*/
     ./configure
     make && sudo make install
-- name: Insall tmux package manager (tmp)
+- name: Install tmux package manager (tpm)
   ansible.builtin.git:
     repo: 'https://github.com/tmux-plugins/tpm'
     dest: '~/.config/tmux/plugins/tpm/'
