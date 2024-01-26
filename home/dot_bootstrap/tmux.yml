@@ -19,7 +19,7 @@
     dest: "/tmp/"
 - name: Configure tmux before build
   ansible.builtin.command:
-    cmd: cd /tmp/tmux-3.3a/ && ./configure
+    cmd: "cd /tmp/tmux-3.3a/ && sh configure"
 - name: Build tmux
   community.general.make:
     chdir: "/tmp/tmux-3.3a/"
