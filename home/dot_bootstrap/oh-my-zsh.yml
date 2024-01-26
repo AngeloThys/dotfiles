@@ -1,4 +1,5 @@
 ---
 - name:
-  ansible.builtin.command:
-    cmd: sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+  ansible.builtin.shell: |
+    curl -fsSL https://install.ohmyz.sh/
+    sh install.sh
