@@ -1,5 +1,5 @@
 ---
 - name:
   ansible.builtin.shell: |
-    curl -fsSL https://install.ohmyz.sh/
+    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     sh install.sh
