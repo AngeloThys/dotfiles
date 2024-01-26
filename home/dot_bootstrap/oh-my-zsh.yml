@@ -1,0 +1,4 @@
+---
+- name:
+  ansible.builtin.shell: |
+    sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
