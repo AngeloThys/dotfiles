@@ -30,4 +30,4 @@
     repo: 'https://github.com/tmux-plugins/tpm'
     dest: '~/.config/tmux/plugins/tpm/'
 - name: Source tmux config
-  ansible.builtin.shell: 'tmux source ~/.tmux.conf'
+  ansible.builtin.shell: 'tmux source ~/.config/tmux/tmux.conf'
