@@ -6,18 +6,22 @@
   gather_facts: true
   tasks:
     - name: Lsd installation
+      tags: lsd
       ansible.builtin.include_tasks:
         file: lsd.yml  
     - name: Neovim setup
+      tags: neovim
       ansible.builtin.include_tasks:
         file: neovim.yml
     - name: Tmux installation
+      tags: tmux
       ansible.builtin.include_tasks:
         file: ./tmux.yml
         apply:
-          tags: f-tmux
+          tags: tmux
     - name: Zsh installation
+      tags: zsh
       ansible.builtin.include_tasks:
         file: ./zsh.yml
         apply:
-          tags: f-zsh
+          tags: zsh
