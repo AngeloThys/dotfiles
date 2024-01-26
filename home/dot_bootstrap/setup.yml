@@ -16,7 +16,7 @@
         file: ./tmux.yml
         apply:
           tags: f-tmux
-    - name: Zsh & oh-my-zsh installation
+    - name: Zsh installation
       ansible.builtin.include_tasks:
         file: ./zsh.yml
         apply:
