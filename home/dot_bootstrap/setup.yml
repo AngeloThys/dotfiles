@@ -25,3 +25,9 @@
         file: ./zsh.yml
         apply:
           tags: zsh
+    - name: Oh-my-zsh installation
+      tags: oh-my-zsh
+      ansible.builtin.include_tasks:
+        file: ./oh-my-zsh.yml
+        apply:
+          tags: oh-my-zsh
