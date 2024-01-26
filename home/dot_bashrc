@@ -17,12 +17,6 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-#
-# Run case-insensitive script for bash
-if [ -e $HOME/.config/bash/case-insensitive.sh ]; then
-	bash $HOME/.config/bash/case-insensitive.sh
-fi
-
 # Ignore case in completion
 if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' >~/.inputrc; fi
 echo 'set completion-ignore-case On' >>~/.inputrc
