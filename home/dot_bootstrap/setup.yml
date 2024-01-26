@@ -28,5 +28,3 @@
       tags: oh-my-zsh
       ansible.builtin.include_tasks:
         file: ./oh-my-zsh.yml
-        apply:
-          tags: oh-my-zsh
