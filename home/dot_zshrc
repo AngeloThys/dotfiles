@@ -17,7 +17,7 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.config/zsh/ohmyzsh/"
+export ZSH="~/.config/zsh/ohmyzsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
