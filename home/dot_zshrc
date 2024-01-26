@@ -1,5 +1,4 @@
-export PATH="$HOME/bin:$HOME/go/bin:$PATH"
-eval "$(oh-my-posh init zsh --config ~/bin/prompts/bubblesextra.omp.json)"
+export PATH="$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH"
 # Configure keyboard + caps = ctrl and esc
 bash $HOME/.local/scripts/caps-esc-ctrl.sh
 # initiate tmux on terminal launch
