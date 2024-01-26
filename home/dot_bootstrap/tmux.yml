@@ -13,13 +13,17 @@
     dest: /tmp/
     mode: '777'
     url: 'https://github.com/tmux/tmux/releases/download/3.3a/tmux-3.3a.tar.gz'
-- name: Install tmux
-  ansible.builtin.shell: |
-    cd /tmp/
-    tar -zxf tmux-3.3a.tar.gz
-    cd tmux-3.3a
-    ./configure
-    make && sudo make install
+- name: Extract tmux tarball
+  ansible.builtin.unarchive:
+    src: "/tmp/tmux-3.3a.tar.gz"
+    dest: "/tmp/"
+- name: Configure tmux before build
+  ansible.builtin.command:
+    cmd: cd /tmp/tmux-3.3a/ && ./configure
+- name: Build tmux
+  community.general.make:
+    chdir: "/tmp/tmux-3.3a/"
+    target: install
 - name: Install tmux package manager (tpm)
   ansible.builtin.git:
     repo: 'https://github.com/tmux-plugins/tpm'
