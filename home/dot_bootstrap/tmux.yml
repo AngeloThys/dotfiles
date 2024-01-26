@@ -17,7 +17,7 @@
   ansible.builtin.shell: |
     cd /tmp/
     tar -zxf tmux-*.tar.gz
-    cd tmux-*/
+    cd tmux-3.*/
     ./configure
     make && sudo make install
 - name: Install tmux package manager (tpm)
