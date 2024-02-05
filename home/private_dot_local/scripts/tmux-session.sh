@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 session="og"
 # check if in tmux session
 if [ -n "$TMUX" ]; then
