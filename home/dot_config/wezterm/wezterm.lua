@@ -4,7 +4,7 @@ return {
 	color_scheme = "Tokyo Night Moon",
 	font = wezterm.font("FiraCode Nerd Font"),
 	font_dirs = { "/home/athys/.local/share/fonts/" },
-	font_size = 16.0,
+	font_size = 14.0,
 	window_padding = {
 		left = "0",
 		right = "0",
