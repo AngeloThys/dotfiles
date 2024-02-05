@@ -1,6 +1,6 @@
 export PATH="$HOME:$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH"
 # initiate tmux on terminal launch
-bash $HOME/.local/scripts/tmux-session.sh
+zsh $HOME/.local/scripts/tmux-session.sh
 # Export default editor variable
 export EDITOR="nvim"
 # Custom aliases
