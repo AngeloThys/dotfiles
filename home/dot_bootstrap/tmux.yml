@@ -1,0 +1,35 @@
+---
+- name: Install tmux dependencies
+  ansible.builtin.apt:
+    name:
+    - libevent-dev
+    - libncurses5-dev 
+    - libncursesw5-dev
+    - build-essential
+    - bison
+    - pkg-config
+- name: Download tmux tarball
+  ansible.builtin.get_url:
+    dest: /tmp/
+    mode: '777'
+    url: 'https://github.com/tmux/tmux/releases/download/3.3a/tmux-3.3a.tar.gz'
+- name: Extract tmux tarball
+  ansible.builtin.unarchive:
+    src: "/tmp/tmux-3.3a.tar.gz"
+    dest: "/tmp/"
+- name: Configure tmux before build
+  ansible.builtin.shell: |
+    cd /tmp/tmux-3.3a/
+    sh configure
+- name: Build tmux
+  community.general.make:
+    chdir: "/tmp/tmux-3.3a/"
+    target: install
+- name: Install tmux package manager (tpm)
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: '~/.config/tmux/plugins/tpm/'
+- name: Source tmux config
+  ansible.builtin.shell: |
+    tmux
+    tmux source ~/.config/tmux/tmux.conf

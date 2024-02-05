@@ -1,5 +1,7 @@
-# dotfiles
-personal dotfiles
+# ⚪Dotfiles w\ chezmoi 🏠 && ansible 🅰️
 
-Setup chezmoi and dotfiles
-run `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply AngeloThys`
+## Setup dotfiles and applications
+
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply AngeloThys
+```

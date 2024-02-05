@@ -1,13 +1,30 @@
 ---
 - name: Machine setup
   hosts: localhost
-  become: true
   connection: local
   gather_facts: true
   tasks:
     - name: Lsd installation
+      tags: lsd
       ansible.builtin.include_tasks:
         file: lsd.yml  
     - name: Neovim setup
+      tags: neovim
       ansible.builtin.include_tasks:
         file: neovim.yml
+    - name: Tmux installation
+      tags: tmux
+      ansible.builtin.include_tasks:
+        file: ./tmux.yml
+        apply:
+          tags: tmux
+    - name: Zsh installation
+      tags: zsh
+      ansible.builtin.include_tasks:
+        file: ./zsh.yml
+        apply:
+          tags: zsh
+    - name: Oh-my-zsh installation
+      tags: oh-my-zsh
+      ansible.builtin.include_tasks:
+        file: ./oh-my-zsh.yml

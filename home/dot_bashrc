@@ -1,4 +1,3 @@
-eval "$(oh-my-posh init bash --config ~/lib/oh-my-posh-themes/montys.omp.json)"
 # Configure keyboard + caps = ctrl and esc
 bash $HOME/.local/scripts/caps-esc-ctrl.sh
 # initiate tmux on terminal launch
@@ -7,7 +6,6 @@ bash $HOME/.local/scripts/tmux-session.sh
 export EDITOR="nvim"
 # Add personal bin to $PATH
 export PATH=~/bin:$HOME:$PATH
-export PATH="/mnt/c/Program Files/win32yank-x64/":$PATH
 # Custom aliases
 alias code='code-insiders'
 alias lsa='lsd -ah'
@@ -19,15 +17,9 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-#
-# Run case-insensitive script for bash
-if [ -e $HOME/.config/bash/case-insensitive.sh ]; then
-	bash $HOME/.config/bash/case-insensitive.sh
-fi
-
 # Ignore case in completion
-bind 'set completion-ignore-case on'
-
+if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' >~/.inputrc; fi
+echo 'set completion-ignore-case On' >>~/.inputrc
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;

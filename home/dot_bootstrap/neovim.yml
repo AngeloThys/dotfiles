@@ -16,6 +16,7 @@
     repo: 'https://github.com/neovim/neovim'
     dest: '/home/athys/lib/neovim'
     clone: true
+    force: true
   tags:
   - i-neovim
 - name: Build neovim
