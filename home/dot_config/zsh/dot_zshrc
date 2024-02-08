@@ -1,4 +1,4 @@
-export PATH="$HOME:$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH"
+export PATH="$HOME:$HOME/bin:$HOME/go/bin:/usr/local/bin:/usr/local/go/bin:$PATH"
 # initiate tmux on terminal launch
 zsh $HOME/.local/scripts/tmux-session.sh
 # Export default editor variable
