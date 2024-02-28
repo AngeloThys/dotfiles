@@ -3,5 +3,5 @@
 ## Setup dotfiles and applications
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply AngeloThys
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --ssh --apply AngeloThys
 ```
